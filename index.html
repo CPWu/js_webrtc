@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebRTC</title>
-  </head>
-  <body>
-    <h2>1. Start your Webcam</h2>
-    <div class="videos">
-      <span>
-        <h3>Local Stream</h3>
-        <video id="webcamVideo" autoplay playsinline></video>
-      </span>
-      <span>
-        <h3>Remote Stream</h3>
-        <video id="remoteVideo" autoplay playsinline></video>
-      </span>
-    </div>
+<html>
 
-    <button id="webcamButton">Start webcam</button>
-    <h2>2. Create a new Call</h2>
-    <button id="callButton" disabled>Create Call (offer)</button>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>WebRTC</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 
-    <h2>3. Join a Call</h2>
-    <p>Answer the call from a different browser window or device</p>
-    
-    <input id="callInput" />
-    <button id="answerButton" disabled>Answer</button>
+</head>
 
-    <h2>4. Hangup</h2>
+<body>
 
-    <button id="hangupButton" disabled>Hangup</button>
+  <div id="videos">
+    <!-- User #1 -->
+    <video class="video-player" id="user-1" autoplay playsinline></video>
+    <!-- User #2 -->
+    <video class="video-player" id="user-2" autoplay playsinline></video>
+  </div>
 
-    <!-- script for webrtc -->
-    <script type="module" src="/main.js"></script>
+  <button id="create-offer">Create Offer</button>
+  <label>SDP Offer</label>
+  <textarea id="offer-sdp"></textarea>
 
-  </body>
+  <button id="create-answer">Create Answer</button>
+  <label>SDP Answer</label>
+  <textarea id="answer-sdp"></textarea>
+
+  <button id="add-answer">Add Answer</button>
+
+</body>
+<script src="agora-rtm-sdk-1.4.4.js"></script>
+<script src='main.js'></script>
+
 </html>
